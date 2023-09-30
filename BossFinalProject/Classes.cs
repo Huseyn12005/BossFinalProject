@@ -8,7 +8,7 @@ namespace BossFinalProject
 {
     public class Worker
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }
@@ -19,17 +19,11 @@ namespace BossFinalProject
         public string Phone { get; set; }
         public CV Cv { get; set; }
         public List<Notification> Notifications { get; set; } = new List<Notification>();
-        public string Ixtisas;
-        public string OxuduguMekteb;
-        public int UniQebulBali;
-        public List<string>? Bacariqlar = new List<string>();
-        public List<string> Companies = new List<string>();
-        public Dictionary<string, string> BildiyiXariciDiller = new Dictionary<string, string>();
-        public bool Diplom;
+
         public Worker(string name, string surname, int age, string username, string email, string password, string city, string phone)
         {
 
-        Id = "1";
+            Id = Guid.NewGuid();
             Name = name;
             Surname = surname;
             Age = age;
@@ -38,8 +32,9 @@ namespace BossFinalProject
             Password = password;
             City = city;
             Phone = phone;
+            Cv = null;
             Notifications = new List<Notification>();
-            Cv = new CV(Ixtisas, OxuduguMekteb, UniQebulBali, Bacariqlar, Companies, BildiyiXariciDiller, Diplom);
+
 
         }
     }
@@ -154,22 +149,29 @@ namespace BossFinalProject
     {
         public Guid Id { get; set; }
         public string Text { get; set; }
-        public DateTime date_time { get; set; }
+        public DateTime Date_time { get; set; }
         public Worker FromWorker { get; set; }
 
         public Notification(string text, Worker from)
         {
             Id = Guid.NewGuid();
             Text = text;
-            date_time = DateTime.Now;
+            Date_time = DateTime.Now;
             FromWorker = from;
+        }
+
+        public Notification(string text)
+        {
+            Id = Guid.NewGuid();
+            Text = text;
+            Date_time = DateTime.Now;
         }
 
         public void Print()
         {
             Console.WriteLine("ID: " + Id);
             Console.WriteLine("Text:" + Text);
-            Console.WriteLine("Data: " + date_time);
+            Console.WriteLine("Data: " + Date_time);
             Console.WriteLine();
             Console.WriteLine();
         }

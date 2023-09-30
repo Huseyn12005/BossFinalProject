@@ -240,6 +240,10 @@ do
                                                     {
                                                         item.Print();
                                                     }
+                                                    Console.WriteLine();
+                                                    Console.WriteLine();
+                                                    Console.WriteLine("Press any button to continue...");
+                                                    Console.ReadKey();
                                                 }
                                                 else if(choice_worker_menu_menu == 4)
                                                 {
@@ -458,7 +462,8 @@ do
                                                         {
                                                             Console.Clear();
                                                             item.Print();
-                                                            item.FromWorker.Cv.Print();
+                                                            if(item.FromWorker.Cv != null)
+                                                                item.FromWorker.Cv.Print();
                                                             Console.WriteLine();
                                                             Console.WriteLine();
                                                             Console.WriteLine("Do you want accept worker's request(yes/no): ");
@@ -466,7 +471,7 @@ do
                                                             if (answer.ToLower() == "yes")
                                                             {
                                                                 Console.WriteLine();
-                                                                Notification notification = new Notification($"{employers[current_employer].Username} accept your request for Vacancie\nEmployer ID: {employers[current_employer].Id}", workers![0]);
+                                                                Notification notification = new Notification($"{employers[current_employer].Username} acccept your request for Vacancie");
                                                                 item.FromWorker.Notifications.Add(notification);
                                                                 JsonSerializerOptions options = new JsonSerializerOptions();
                                                                 options.WriteIndented = true;
