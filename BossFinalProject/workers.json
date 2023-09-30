@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "1",
+    "Name": "sdfsdf",
+    "Surname": "sdfsdfs",
+    "Age": 234,
+    "Username": "sddf",
+    "Email": "ds@gmail.com",
+    "Password": "2005",
+    "City": "Baku",
+    "Phone": "0555868249",
+    "Cv": {
+      "Ixtisas": null,
+      "OxuduguMekteb": null,
+      "UniQebulBali": 0,
+      "Bacariqlar": [],
+      "Companies": [],
+      "BildiyiXariciDiller": {},
+      "Diplom": false
+    },
+    "Notifications": []
+  }
+]
